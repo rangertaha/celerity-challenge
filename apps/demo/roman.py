@@ -9,6 +9,9 @@ rom_table = (
 
 
 class RomanNumeral(object):
+    """
+
+    """
     def __init__(self, x):
         if isinstance(x, int):
             self.x = x
@@ -17,10 +20,12 @@ class RomanNumeral(object):
 
     @property
     def int(self):
+        """Returns the integer"""
         return self.x
 
     @property
     def rom(self):
+        """Returns the roman numeral"""
         return self._int_to_rom(self.x)
 
     def _highest_value(self, s):
