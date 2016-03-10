@@ -31,7 +31,7 @@ class RomanNumeral(object):
     def __highest_value(self, s):
         """Returns the highest value object.
 
-        The common recurring pattern in bother functions is to identify the
+        The common recurring pattern in both functions is to identify the
         highest number or character value.
 
         """
