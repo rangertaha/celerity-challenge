@@ -1,5 +1,4 @@
-{% load staticfiles  %}
-{% spaceless %}{% endspaceless %}
+{% spaceless %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,16 +9,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>{% block title %}Django Developer Coding Challenge{% endblock %}</title>
-
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css" integrity="sha384-XXXXXXXX" crossorigin="anonymous">
-
-
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="{% static 'bootstrap.css' %}" >
   </head>
 
   <body>
     {% block content %}{% endblock %}
   </body>
 </html>
+{% endspaceless %}

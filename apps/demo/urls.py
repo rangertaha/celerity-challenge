@@ -7,5 +7,5 @@ from .views import RomanNumeralsView
 
 
 urlpatterns = [
-    url(r'^$', RomanNumeralsView.as_view(), name='weather-email')
+    url(r'^$', RomanNumeralsView.as_view(), name='demo')
 ]

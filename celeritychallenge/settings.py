@@ -34,6 +34,7 @@ INSTALLED_APPS = (
     # Third party apps
 
     # Local apps
+    'apps.demo'
 )
 
 MIDDLEWARE_CLASSES = (
