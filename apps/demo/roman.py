@@ -42,6 +42,7 @@ class RomanNumeral(object):
                 return chars, value
 
     def _int_to_rom(self, n, c=''):
+        """Converting from integer to roman numerals"""
         chars, value = self._highest_value(n)
         c += chars
         if (n - value) > 0:
@@ -50,6 +51,7 @@ class RomanNumeral(object):
             return c
 
     def _rom_to_int(self, s, i=0):
+        """Converting from roman numerals to integer """
         chars, value = self._highest_value(s)
         i += value
         s = s[len(chars):]
