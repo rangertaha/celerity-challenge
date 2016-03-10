@@ -3,11 +3,6 @@
 ![Alt text](project.png "Django Developer Coding Challenge")
 
 
-
-## Prerequisites
-
-
-
 ## Installation
 
 In the top level directory **celerity-challenge** we need to do the following.
@@ -28,22 +23,6 @@ Install project dependencies
 
     pip install -r requirements.txt
 
-Create tables
-
-    python manage.py makemigrations
-    python manage.py migrate
-    
-
-## QA/Testing
-
-Check for pep8 style conventions
-
-    pep8 celeritychallenge
-
-
-TODO: Write and run unit tests
-
-    python manage.py test
 
 
 ## Local Execution
@@ -55,13 +34,19 @@ TODO: Write and run unit tests
 ## Structure
 
     celerity-challenge
-        apps                      # Modular apps 
-            wemail                # The app for sending emails. 
+        apps                    # Modular apps 
+            demo
+                templates       # The template for displaying the form          
+                forms.py        # The forms
+                roman.py        # The Roman/Number algorithm.
+                tests.py
+                urls.py
+                views.py        # Serves the html and success message or errors
             
-        celeritychallenge         # Global and shared components
+        celeritychallenge       # Global and shared components
             static
             templates
-            local_settings.py     # Local setting for development
+            local_settings.py   # Local setting for development
             settings.py
             urls.py
             wsgi.py
@@ -70,6 +55,5 @@ TODO: Write and run unit tests
     manage.py
     README.md
     requirements.txt
-    setup.py
-    weatherapp.log
+    celeritychallenge.log       # Created at runtime
 
