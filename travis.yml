@@ -1,0 +1,34 @@
+#   A basic travis.yml boilerplate for Django projects
+#
+#   The set-up assumes a postgreSQL database.
+#
+#   Replace the following variables in the code:
+# * your_project_settings
+# * rangertaha
+# * celerity-challenge
+
+language: python
+
+python:
+  - 2.6
+  - 2.7
+
+#services: postgresql
+
+env:
+  - DJANGO=1.9.3
+
+before_install:
+  - export DJANGO_SETTINGS_MODULE=celeritychallenge.settings
+  - export PYTHONPATH=$HOME/builds/rangertaha/celerity-challenge
+  - export PIP_USE_MIRRORS=true
+
+install:
+  - pip install -r requirements.txt
+
+
+before_script:
+#  - psql -c "CREATE DATABASE celerity;" -U postgres
+
+script:
+  - python manage.py syncdb --noinput
