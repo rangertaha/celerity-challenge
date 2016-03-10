@@ -52,3 +52,10 @@ class RomanNumeral(object):
 
     def __repr__(self):
         return self._int_to_rom(self.x)
+
+    def is_valid(self):
+        """
+        Checking for roman numbers from the lookup table that are not in
+        order highest to lowest
+        """
+        pass
