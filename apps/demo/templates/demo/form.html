@@ -8,7 +8,13 @@
             <div class="card-header">
                 <b>Django Developer Coding Challenge</b>
             </div>
-            {% include 'snippets/alerts.html' %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{% if message.tags %}{{ message.tags }}{% endif %}" role="alert">
+                        <strong>{% if message.tags %}{{ message.tags|title }}{% endif %}</strong> {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
             <div class="card-block">
                 <form action="/" method="post">
                     <fieldset class="form-group">

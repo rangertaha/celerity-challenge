@@ -12,3 +12,17 @@ class RomanNumeralsForm(forms.Form):
     def __init__(self, *args, **kwargs):
             super(RomanNumeralsForm, self).__init__(*args, **kwargs)
             self.fields['number'].widget.attrs.update({'class': 'form-control'})
+
+    def clean(self):
+        cleaned_data = super(RomanNumeralsForm, self).clean()
+        self.cleaned_number = cleaned_data.get('number', '')
+
+        try:
+            rnum = RomanNumeral(self.cleaned_number)
+        except:
+            raise forms.ValidationError("You entered an invalid number")
+
+    def msg(self):
+        number = RomanNumeral(self.cleaned_number)
+        return '{0} is {1}'.format(
+            self.cleaned_number, number.rom)
