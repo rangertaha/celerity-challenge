@@ -29,10 +29,8 @@ class RomanNumeral(object):
         return self.__int_to_rom(self.x)
 
     def __highest_value(self, s):
-        """Returns the highest value object.
-
-        The common recurring pattern in both functions is to identify the
-        highest number or character value.
+        """Returns the highest value object from the lookup table or the value
+        of the character if available.
 
         """
         for value, chars in sorted(rom_table, reverse=True):
